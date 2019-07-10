@@ -1,0 +1,28 @@
+BEGIN {FS=" ";RS="\n\n"}
+/touchDown/ {Down="0";x=$5;y=$6}
+/touchUp/ {Up="1"}
+/touchMove/ {Move="2";x=$5;y=$6}
+/touchPress/ {Press="3";x=$5;y=$6}
+/sleep/ {time+=$2}
+{if (Down!="")
+	{
+		{print Down"|"x"|"y"|0|0|0|"time"|720|1280"}{Down=""}{Up=""}{Move=""}{Press=""}
+	}
+
+else if (Up==1)
+	{
+		{print Up"|"x"|"y"|0|0|0|"time"|720|1280"} {Down=""}{Up=""}{Move=""}{Press=""};
+	}
+else if (Move==2)
+	{
+		{print Move"|"x"|"y"|0|0|0|"time"|720|1280"} {Down=""}{Up=""}{Move=""}{Press=""};
+	}
+else if (Press==3)
+	{
+		{print 0"|"x"|"y"|0|0|0|"time"|720|1280"}{print 1"|"x"|"y"|0|0|0|"time"|720|1280"}{Down=""}{Up=""}{Move=""}{Press=""};
+	}
+else
+	{
+		{Down=""}{Up=""}{Move=""}{Press=""}
+	}
+}

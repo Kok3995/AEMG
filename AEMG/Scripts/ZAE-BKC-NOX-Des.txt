@@ -1,0 +1,5 @@
+Behavior: goto Rift->eat->goto BKC->battle->food->battle->repeat
+Where to start: Anywhere
+Loopable?: Yes
+Require chars: Any characters that can one-shot the mob
+Team setup: AOE char in 3rd slot. AOE Skill in 2nd slot

@@ -1,0 +1,26 @@
+/^\/\/battleEnd$/{
+	for (i=1;i<=MAX;++i) 
+	{
+		while(getline line < "Scripts/B-3u2s.txt"){print line}
+		close("Scripts/B-3u2s.txt")
+	}
+}
+
+/^\/\/ADBattleEnd$/ {
+	for (i=1;i<=5;++i) 
+	{
+		while(getline line < "Scripts/B-AD.txt"){print line}
+		close("Scripts/B-AD.txt")
+	}
+}
+
+/^\/\/ADbossBattleEnd$/ {
+	while(getline line < "Scripts/B-AD-Boss.txt"){print line}
+	close("Scripts/B-AD-Boss.txt")
+}
+
+/^\/\/HorrorDelay$/ {f = 1; print; next}
+f && /sleep/ {$2 = DELAY}
+{f = 0}
+
+{print}

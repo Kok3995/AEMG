@@ -1,0 +1,19 @@
+
+//atk
+touchPress 0 60 1170
+sleep 5000
+//battle exit
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550
+touchPress 0 250 650
+sleep 550

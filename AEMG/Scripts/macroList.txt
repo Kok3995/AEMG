@@ -1,0 +1,25 @@
+BeastKing's Castle
+ZAE-BKC-NOX.txt
+ZAE-BKC-NOX-Des.txt
+EXP
+0
+Dragon Palace (Hard)
+ZAE-DP-H-NOX.txt
+ZAE-DP-Des.txt
+AD
+0
+Dragon Palace (Very Hard)
+ZAE-DP-VH-NOX.txt
+ZAE-DP-Des.txt
+ADVH
+0
+Xeno-Domain (Hard) *
+ZAE-XD-H-NOX.txt
+ZAE-XD-Des.txt
+AD
+5000
+Xeno-Domain (Very Hard) *
+ZAE-XD-VH-NOX.txt
+ZAE-XD-Des.txt
+ADVH
+5000

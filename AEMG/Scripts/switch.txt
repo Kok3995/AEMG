@@ -1,0 +1,4 @@
+
+//switch
+touchPress 0 170 1120
+sleep 400

@@ -1,0 +1,19 @@
+{
+    "NAMEHERE": {
+        "combination": "false",
+        "name": "NAMEHERE",
+        "needShow": "true",
+        "new": "true",
+        "playSet": {
+            "accelerator": "1",
+            "interval": "0",
+            "mode": "0",
+            "playOnStart": "false",
+            "playSeconds": "0#0#0",
+            "repeatTimes": "1",
+            "restartPlayer": "false",
+            "restartTime": "60"
+        },
+        "priority": "99",
+        "time": "TIMEHERE"
+	},

@@ -1,0 +1,126 @@
+
+//AF
+touchPress 0 655 1200
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300
+touchPress 0 170 870
+sleep 300

@@ -1,0 +1,4 @@
+
+//atk
+touchPress 0 60 1170
+sleep 15000

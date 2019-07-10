@@ -1,0 +1,475 @@
+﻿<Window x:Class="AEMG.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AEMG"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AEMG" Height="650" Width="900" MinHeight="650" MinWidth="900">
+    <Window.Resources>
+        <Style x:Key="ButtonControlTemplate1" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                        BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Images\atk-normal.png"/>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Images\atk-highlighted.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Images\atk-disabled.png" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+            
+                    
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--#region Left Side-->
+        <StackPanel Margin="10" Grid.Column="0">
+            <!-- Label to ask the user to choose a macro -->
+            <Label FontWeight="Bold" Content="Choose the Macro you want to generate" />
+
+            <!-- Combobox for user to choose a macro -->
+            <ComboBox ItemsSource="{Binding ComboBoxItemList}"
+                  SelectedItem="{Binding SelectedMacro}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Margin="0 0 5 0" Source="{Binding Type, Converter={x:Static local:TypeToImageConverter.Instance}}" />
+                            <TextBlock Text="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- Descriptions: -->
+            <Label FontWeight="Bold" Content="Descriptions:" />
+
+            <!-- TextBox to hold macro descriptions -->
+            <Border BorderThickness="5" Background="LightGray" BorderBrush="Azure">
+                <TextBlock Text="{Binding DescriptionTextBlock}" TextWrapping="Wrap" Padding="5" FontSize="13" FontStyle="Italic" LineHeight="20"/>
+            </Border>
+
+            <!-- Record file location -->
+            <Label FontWeight="Bold" Content="_Record file Location:" />
+
+            <!-- TextBox and button for user to input the record file location -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox Text="{Binding RecordFileLocation}" Margin="0 0 2 0" />
+                <!-- Button to open window dialog to choose file -->
+                <Button Command="{Binding RecordFileOpenDialog}" Grid.Column="1" Width="25" Content="..."/>
+
+            </Grid>
+
+            <!-- Macro name in Nox Recorder -->
+            <Label FontWeight="Bold" Content="Name to appear in Nox Macro Recorder"/>
+            <TextBox Text="{Binding OutputNameNox}"/>
+
+            <StackPanel Margin="0 20 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox Margin="0 0 100 0" Content="Memu 720x1280" IsChecked="{Binding Memu720IsChecked}" />
+                <CheckBox Content="Memu 1080x1920" IsChecked="{Binding Memu1080IsChecked}" />
+            </StackPanel>
+
+        </StackPanel>
+        <!--#endregion-->
+
+        <!--#region Right Side-->
+        <StackPanel Margin="10" Grid.Column="1">
+
+            <!-- EXP Macro -->
+            <StackPanel IsEnabled="{Binding IsEnabledEXP}">
+                <Label FontWeight="Bold" Content="EXP Macro" HorizontalAlignment="Center"/>
+
+                <!-- Character max MP and skill MP -->
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="5 0 5 0">
+                        <Label Content="AOE Character MAX MP:" />
+                        <TextBox Text="{Binding MaxMP, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+
+                    <StackPanel Margin="5 0 5 0" Grid.Column="1">
+                        <Label Content="AOE Character Skill MP:" />
+                        <TextBox Text="{Binding SkillMP, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+            <Border BorderThickness="1" BorderBrush="Gray" Margin="10"/>
+
+            <!-- AD Dungeon Macro -->
+            <StackPanel IsEnabled="{Binding IsEnabledAD}">
+
+                <!--#region Trash Mob Battle-->
+                <Label FontWeight="Bold" Content="Another Dungeon Macro" HorizontalAlignment="Center"/>
+
+                <Label Content="Trash Mob Battle:" />
+                <Grid Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--#region Character-->
+                    <Label Grid.Row="1" Content="Character 1"/>
+                    <Label Grid.Row="2" Content="Character 2"/>
+                    <Label Grid.Row="3" Content="Character 3"/>
+                    <Label Grid.Row="4" Content="Character 4"/>
+                    <!--#endregion-->
+
+                    <!--#region Character available options-->
+                    <Label Grid.Column="1" Content="Default" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <Label Grid.Column="2" Content="Skill 1" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <Label Grid.Column="3" Content="Skill 2" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <Label Grid.Column="4" Content="Skill 3" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <Label Grid.Column="5" Content="5th" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <Label Grid.Column="6" Content="6th" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                    <!--#endregion-->
+
+                    <!--#region Character 1 options-->
+                    <ListBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" BorderThickness="0" SelectedIndex="{Binding Char01Ac}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid IsItemsHost="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBoxItem Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+                    </ListBox>
+                    <!--#endregion-->
+
+                    <!--#region Character 2 options-->
+                    <ListBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" BorderThickness="0" SelectedIndex="{Binding Char02Ac}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid IsItemsHost="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBoxItem Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+                    </ListBox>
+                    <!--#endregion-->
+
+                    <!--#region Character 3 options-->
+                    <ListBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" BorderThickness="0" SelectedIndex="{Binding Char03Ac}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid IsItemsHost="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBoxItem Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+                    </ListBox>
+                    <!--#endregion-->
+
+                    <!--#region Character 4 options-->
+                    <ListBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="6" BorderThickness="0" SelectedIndex="{Binding Char04Ac}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid IsItemsHost="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBoxItem Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ListBoxItem Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+                    </ListBox>
+                    <!--#endregion-->
+
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region Boss Battle-->
+
+                <!--Label and add remove tab button-->
+                <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
+                    <Label Content="Boss Battle:" />
+                    <Button Content="+" Width="25" Command="{Binding AddTurnCommand}"/>
+                    <Button Content="-" Width="25" Command="{Binding RemoveTurnCommand}"/>
+
+                    <CheckBox Content="AF" VerticalAlignment="Center" Margin="120 0 0 0" IsChecked="{Binding AFIsChecked}"/>
+                    <Label Content="_Delay" Margin="20 0 0 0" />
+                    <TextBox Width="50" Margin="2" Text="{Binding DelayTextBox, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <!-- Tab Control that hold all turns -->
+                <TabControl ItemsSource="{Binding BossTurnList}"
+                            IsSynchronizedWithCurrentItem="True">
+                    <!-- Use this to sync the item with the listbox below -->
+                    <!-- Template for Tab that display turn number -->
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <!-- Bind to Tab property of DataContext -->
+                            <TextBlock Text="{Binding DataContext.Tab,
+                                RelativeSource={RelativeSource AncestorType=ItemsControl, Mode=FindAncestor}}" />
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <!-- In each Tab is a grid that hold all info about a turn -->
+                    <TabControl.ContentTemplate>
+                        <DataTemplate>
+                            <!--Outer Grid with 7 col and 5 rows-->
+                            <Grid Width="400" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <!--#region Character-->
+                                <Label Grid.Row="1" Content="Character 1"/>
+                                <Label Grid.Row="2" Content="Character 2"/>
+                                <Label Grid.Row="3" Content="Character 3"/>
+                                <Label Grid.Row="4" Content="Character 4"/>
+                                <!--#endregion-->
+
+                                <!--#region Character available options-->
+                                <Label Grid.Column="1" Content="Default" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <Label Grid.Column="2" Content="Skill 1" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <Label Grid.Column="3" Content="Skill 2" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <Label Grid.Column="4" Content="Skill 3" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <Label Grid.Column="5" Content="5th" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <Label Grid.Column="6" Content="6th" HorizontalContentAlignment="Center" FontWeight="Bold" />
+                                <!--#endregion-->
+
+                                <!--#region ListBox of 4 characters-->
+                                <ListBox ItemsSource="{Binding}"
+                                         IsSynchronizedWithCurrentItem="True"
+                                    Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="4" HorizontalContentAlignment="Stretch" BorderThickness="0" >
+                                    <!--Each Item is another Listbox style as 6 buttons-->
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <ListBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" BorderThickness="0" SelectedIndex="{Binding CharAct}">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                                    <RadioButton Content="{TemplateBinding Content}"
+                                     IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected}"/>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <UniformGrid Columns="6"/>
+                                                    </ItemsPanelTemplate>
+                                                </ListBox.ItemsPanel>
+
+                                                <ListBoxItem Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <ListBoxItem Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <ListBoxItem Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <ListBoxItem Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <ListBoxItem Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                <ListBoxItem Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </ListBox>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                    <!--Panel change to a uniform grid with 4 rows for 4 characters-->
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Rows="4"/>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <!--No highlight when clicked-->
+                                    <ListBox.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="White" />
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="White" />
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="White" />
+                                    </ListBox.Resources>
+                                </ListBox>
+
+                                <!--#endregion-->
+
+                            </Grid>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+                </TabControl>
+
+                <!--#endregion-->
+
+            </StackPanel>
+
+            <!-- Go button -->
+            <Button Style="{StaticResource ButtonControlTemplate1}"
+                Command="{Binding GenerateMacroCommand}" Height="100" Width ="100" Margin="0 10 20 0" HorizontalAlignment="Right">
+
+            </Button>
+        </StackPanel>
+        <!--#endregion
+-->
+
+    </Grid>
+    
+</Window>

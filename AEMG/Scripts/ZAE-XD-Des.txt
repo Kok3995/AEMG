@@ -1,0 +1,5 @@
+Behavior: Start->battlex5->Area2->battlex5->Area3->battlex5->boss
+Where to start: At the party selection screen after selecting the dungeon
+Loopable?: Yes
+Require chars: any as long as you can kill the mob in 1 turn
+Team setup: Fire team with 1 water aoe

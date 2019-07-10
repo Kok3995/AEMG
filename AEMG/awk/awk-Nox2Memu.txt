@@ -1,0 +1,3 @@
+BEGIN {FS="|"}
+{click=$1;x=$2;y=$3;time=$7}
+{print time"000--VINPUT--MULTI:1:"click":"x":"y}

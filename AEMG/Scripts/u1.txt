@@ -1,0 +1,4 @@
+
+//1u
+touchPress 0 100 150
+sleep 600
