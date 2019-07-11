@@ -23,24 +23,15 @@ namespace AEMG.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting {
-            get {
-                return ((string)(this["Setting"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string s {
+        public string RecordFileLocation {
             get {
-                return ((string)(this["s"]));
+                return ((string)(this["RecordFileLocation"]));
             }
             set {
-                this["s"] = value;
+                this["RecordFileLocation"] = value;
             }
         }
     }

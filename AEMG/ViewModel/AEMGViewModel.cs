@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
+using AEMG.Properties;
 
 namespace AEMG
 {
@@ -44,7 +45,7 @@ namespace AEMG
         /// <summary>
         /// Default location of the record file
         /// </summary>
-        private string _recordFileLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),@"Nox\record\records");
+        private string _recordFileLocation = Settings.Default.RecordFileLocation;
 
         private string _outputNameNox = "Nox-macro";
 
@@ -127,8 +128,17 @@ namespace AEMG
         /// </summary>
         public string RecordFileLocation
         {
-            get { return _recordFileLocation; }
-            set { _recordFileLocation = value; }
+            get
+            {
+                //If recordfilelocation in setting is null or empty then use default location
+                if (_recordFileLocation == null || _recordFileLocation == string.Empty)
+                {
+                    _recordFileLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Nox\record\records");
+                    return _recordFileLocation;
+                }
+                else return _recordFileLocation;
+            }
+            set { _recordFileLocation = Settings.Default.RecordFileLocation = value; Settings.Default.Save(); }
         }
 
         /// <summary>

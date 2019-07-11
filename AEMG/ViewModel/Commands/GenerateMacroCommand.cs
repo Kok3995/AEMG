@@ -90,7 +90,12 @@ namespace AEMG
 
             //generate the macro
             Methods.GenerateMacro();
-            Methods.AddToRecordFile(_viewModel.RecordFileLocation, _viewModel.OutputNameNox);
+
+            //If insert record file fail then stop the command
+            if (!Methods.AddToRecordFile(_viewModel.RecordFileLocation, _viewModel.OutputNameNox))
+                return;
+
+            //Convert to memu if checked and show complete message
             if (_viewModel.Memu720IsChecked == true) Methods.Convert2Memu(720);
             if (_viewModel.Memu1080IsChecked == true) Methods.Convert2Memu(1080);
             MessageBox.Show($"Generate {_viewModel.SelectedMacro.Name} Macro Done!", "AEMG", MessageBoxButton.OK, MessageBoxImage.Information);

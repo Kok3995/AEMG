@@ -205,7 +205,7 @@ namespace AEMG
         /// </summary>
         /// <param name="recordsPath">Path to the records file</param>
         /// <param name="outputName">OutputName text box</param>
-        internal static void AddToRecordFile(string recordsPath, string outputName)
+        internal static bool AddToRecordFile(string recordsPath, string outputName)
         {
             //check if file existed, it not then create directory for it
             (new FileInfo(recordsPath)).Directory.Create();
@@ -213,8 +213,9 @@ namespace AEMG
             //create records file it not existed
             File.AppendAllText(recordsPath, string.Empty);
 
-            //path to records template
+            //path to records template and record folder
             string recordsTemplate = $"{Scripts}record-template.txt";
+            string recordsdir = Directory.GetParent(recordsPath).ToString();
 
             //original records file text as list
             List<string> recordsList;
@@ -235,19 +236,38 @@ namespace AEMG
             if (recordsList.Count == 0)         
                 recordsList.AddRange(new List<string> { "{\n", "}" });
 
+            //check in the record already contain outputname to ask for overwrite, if not then simple continue
+            switch (Methods.IsOverwrite(outputName, recordsList))
+            {
+                case "no":
+                    return false;
+                case "yes":
+                    File.Copy("Macro.txt", $"{recordsdir}\\{outputName}", true);
+                    return true;
+                default:
+                    break;
+            }
+
             //remove the first line which contain "{"
             recordsList.RemoveAt(0);
 
             //insert the newly edited template
             File.WriteAllText(recordsPath, recordsTemplateTxt);
+            File.AppendAllText(recordsPath, Environment.NewLine);
+
+            //if recordLists only has 1 child then Append "}", otherwise insert "},"
+            if (recordsList.Count == 1)
+                File.AppendAllText(recordsPath, "\t}");
+            else File.AppendAllText(recordsPath, "\t},");
 
             //Append the rest of record file
             File.AppendAllText(recordsPath, Environment.NewLine);
             File.AppendAllLines(recordsPath, recordsList);
 
             //Copy and rename the macro to record folder
-            string recordsdir = Directory.GetParent(recordsPath).ToString();
             File.Copy("Macro.txt", $"{recordsdir}\\{outputName}", true);
+
+            return true;
         }
 
         #region Helper Methods
@@ -276,6 +296,34 @@ namespace AEMG
         internal static void InsertTxt(string txt, StreamWriter sw)
         {          
             sw.WriteLine(File.ReadAllText($"{Scripts}{txt}"));
+        }
+
+        /// <summary>
+        /// Check for overwrite option. Return "no", "yes", "nomatch", empty
+        /// </summary>
+        /// <param name="name">name to check</param>
+        /// <param name="list">list of string to check</param>
+        /// <returns></returns>
+        internal static string IsOverwrite(string name, List<string> list)
+        {
+            if (list.Count == 0)
+                return string.Empty;
+
+            foreach (var line in list)
+            {
+                //If it contain the name then ask user if they want to overwrite the file
+                //If No then return false for no overwrite
+                //If Yes then return yes to overwrite
+                if (line.Contains(name) == true)
+                {
+                    if ((MessageBox.Show("The Macro is already exist. Do you want to overwrite it?",
+                    "Overwrite?", MessageBoxButton.YesNo, MessageBoxImage.Question)) == MessageBoxResult.No)
+                        return "no";
+                    else return "yes";
+                }
+            }
+
+            return "nomatch";
         }
 
         #endregion
