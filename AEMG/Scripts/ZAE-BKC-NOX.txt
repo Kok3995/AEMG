@@ -1,4 +1,5 @@
-sleep 2000
+//Beastking exp macro template
+sleep 200
 //map
 touchPress 0 37 288
 sleep 7500

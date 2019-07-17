@@ -69,7 +69,10 @@ namespace AEMG
             switch (_viewModel.SelectedMacro.Type)
             {
                 //If the macro is EXP type then do this
-                case MacroItemType.EXP:                   
+                case MacroItemType.EXP:
+                    //Insert Exp data to template
+                    Methods.InsertExpData(_viewModel.ExpIsChecked01, _viewModel.ExpIsChecked02, _viewModel.ExpIsChecked03, _viewModel.ExpIsChecked04);
+
                     //insert battle data into the template base on macro template and MaxBattle
                     Methods.InsertBattleData(_viewModel.SelectedMacro.TemplateName, string.Empty, _viewModel.MaxBattle);               
                     break;

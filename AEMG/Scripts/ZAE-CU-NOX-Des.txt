@@ -1,4 +1,4 @@
-Behavior: goto Rift->eat->goto BKC->battle->food->battle->repeat
+Behavior: goto Rift->eat->goto CU->battle->food->battle->repeat
 Where to start: Anywhere
 Loopable?: Yes
 Require chars: Any characters that can one-shot the mob

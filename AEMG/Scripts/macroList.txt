@@ -3,6 +3,36 @@ ZAE-BKC-NOX.txt
 ZAE-BKC-NOX-Des.txt
 EXP
 0
+Last Island
+ZAE-LI-NOX.txt
+ZAE-LI-NOX-Des.txt
+EXP
+0
+Chronos Umbra
+ZAE-CU-NOX.txt
+ZAE-CU-NOX-Des.txt
+EXP
+0
+Miglance Labyrinth (Hard)
+ZAE-ML-H-NOX.txt
+ZAE-ML-Des.txt
+AD
+0
+Miglance Labyrinth (Very Hard)
+ZAE-ML-VH-NOX.txt
+ZAE-ML-Des.txt
+ADVH
+0
+Saki's Dream World (Hard)
+ZAE-SDW-H-NOX.txt
+ZAE-SDW-Des.txt
+AD
+0
+Saki's Dream World (Very Hard)
+ZAE-SDW-VH-NOX.txt
+ZAE-SDW-Des.txt
+ADVH
+0
 Dragon Palace (Hard)
 ZAE-DP-H-NOX.txt
 ZAE-DP-Des.txt
@@ -13,13 +43,53 @@ ZAE-DP-VH-NOX.txt
 ZAE-DP-Des.txt
 ADVH
 0
+Man-eating Marsh (Hard)
+ZAE-MEM-H-NOX.txt
+ZAE-MEM-Des.txt
+AD
+0
+Man-eating Marsh (Very Hard)
+ZAE-MEM-VH-NOX.txt
+ZAE-MEM-Des.txt
+ADVH
+0
+Miglance Castle (Hard) *
+ZAE-MC-H-NOX.txt
+ZAE-MC-Des.txt
+AD
+0
+Miglance Castle (Very Hard) *
+ZAE-MC-VH-NOX.txt
+ZAE-MC-Des.txt
+ADVH
+0
+Industrial Ruins (Hard) *
+ZAE-IR-H-NOX.txt
+ZAE-IR-Des.txt
+AD
+0
+Industrial Ruins (Very Hard) *
+ZAE-IR-VH-NOX.txt
+ZAE-IR-Des.txt
+ADVH
+0
 Xeno-Domain (Hard) *
 ZAE-XD-H-NOX.txt
 ZAE-XD-Des.txt
 AD
-5000
+0
 Xeno-Domain (Very Hard) *
 ZAE-XD-VH-NOX.txt
 ZAE-XD-Des.txt
 ADVH
-5000
+0
+The RiftBreaker (Hard)
+ZAE-RB-H-NOX.txt
+ZAE-RB-Des.txt
+AD
+0
+The RiftBreaker (Very Hard)
+ZAE-RB-VH-NOX.txt
+ZAE-RB-Des.txt
+ADVH
+0

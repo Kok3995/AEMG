@@ -3,4 +3,4 @@ awk\awk.exe -f "awk\awk-RmCmt.txt" "tmp1.txt" > "tmp-RmCmt.txt" && echo "Remove 
 awk\awk.exe -f "awk\awk-Format.txt" "tmp-RmCmt.txt" > "tmp-format.txt" && echo "Format text"
 awk\awk.exe -f "awk\awk-Convert2Nox.txt" "tmp-format.txt" > "tmp-nox.txt" && echo "Convert to Nox format"
 awk\awk.exe -f "awk\awk-FixRes.txt" "tmp-nox.txt" > "Macro.txt" && echo "Fix Res"
-REM del tmp0.txt && del tmp1.txt && del tmp-RmCmt.txt && del tmp-format.txt && del tmp-nox.txt && echo. && echo Delete Temp Files
+del tmp0.txt && del tmp1.txt && del tmp-RmCmt.txt && del tmp-format.txt && del tmp-nox.txt && echo. && echo Delete Temp Files

@@ -1,0 +1,5 @@
+Behavior: goto Rift->eat->goto LI->battle->food->battle->repeat
+Where to start: Anywhere
+Loopable?: Yes
+Require chars: Any characters that can one-shot the mob
+Team setup: AOE Skill in 2nd slot. Recommend Earth AOE

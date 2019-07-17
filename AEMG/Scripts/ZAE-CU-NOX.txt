@@ -1,0 +1,202 @@
+//Chronos Umbra exp macro
+sleep 200
+//map
+touchPress 0 37 288
+sleep 7500
+//???
+touchPress 0 575 440
+sleep 3500
+//rift
+touchPress 0 344 592
+sleep 2500
+//yes
+touchPress 0 308 823
+sleep 3000
+touchPress 0 308 823
+sleep 3000
+touchPress 0 308 823
+sleep 3000
+//tree
+touchPress 0 651 446
+sleep 2000
+//
+touchPress 0 250 650
+sleep 2000
+//yes
+touchPress 0 314 803
+sleep 4000
+//
+touchPress 0 250 650
+sleep 2000
+//
+touchPress 0 250 650
+sleep 2000
+//
+touchPress 0 250 650
+sleep 4000
+//right till stair
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 5000
+touchUp 0
+sleep 100
+//right up left up to time room
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 700
+touchMove 0 320 1000
+sleep 20
+touchMove 0 340 1000
+sleep 20
+touchMove 0 360 1000
+sleep 20
+touchMove 0 380 1000
+sleep 20
+touchMove 0 400 1000
+sleep 20
+touchMove 0 420 1000
+sleep 20
+touchMove 0 440 1000
+sleep 20
+touchMove 0 460 1000
+sleep 20
+touchMove 0 480 1000
+sleep 20
+touchMove 0 500 1000
+sleep 20
+touchUp 0
+sleep 1500
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 1000
+touchMove 0 320 800
+sleep 20
+touchMove 0 340 800
+sleep 20
+touchMove 0 360 800
+sleep 20
+touchMove 0 380 800
+sleep 20
+touchMove 0 400 800
+sleep 20
+touchMove 0 420 800
+sleep 20
+touchMove 0 440 800
+sleep 20
+touchMove 0 460 800
+sleep 20
+touchMove 0 480 800
+sleep 20
+touchMove 0 500 800
+sleep 20
+touchUp 0
+sleep 5000
+//up to CU
+touchDown 0 300 900
+sleep 20
+touchMove 0 320 900
+sleep 20
+touchMove 0 340 900
+sleep 20
+touchMove 0 360 900
+sleep 20
+touchMove 0 380 900
+sleep 20
+touchMove 0 400 900
+sleep 20
+touchMove 0 420 900
+sleep 20
+touchMove 0 440 900
+sleep 20
+touchMove 0 460 900
+sleep 20
+touchMove 0 480 900
+sleep 20
+touchMove 0 500 900
+sleep 20
+touchUp 0
+sleep 2800
+//CU
+touchPress 0 560 640
+sleep 2500
+//yes
+touchPress 0 340 640
+sleep 3000
+touchPress 0 340 640
+sleep 3000
+touchPress 0 340 640
+sleep 3000
+touchPress 0 340 640
+sleep 3000
+//battlestart
+//battleEnd
+sleep 2000
+touchPress 0 89 103
+sleep 2300
+touchPress 0 125 1025
+sleep 2700
+touchPress 0 271 816
+sleep 2000
+touchPress 0 392 1044
+sleep 1650
+touchPress 0 384 1024
+sleep 1900
+//battlestart
+//battleEnd

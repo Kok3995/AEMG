@@ -1,81 +1,37 @@
-//Dragon Palace Macro Hard
+//Miglance Castle VH
 sleep 200
-//confirm start
+//Start dungeonn
 touchPress 0 72 812
-sleep 10000
+sleep 6000
 //ADBattlestart
 //ADBattleEnd
-//left to sparkling
+//Area 1
+//go right till wall
 touchDown 0 300 900
 sleep 20
-touchMove 0 300 890
+touchMove 0 300 910
 sleep 20
-touchMove 0 300 880
+touchMove 0 300 920
 sleep 20
-touchMove 0 300 870
+touchMove 0 300 930
 sleep 20
-touchMove 0 300 860
+touchMove 0 300 940
 sleep 20
-touchMove 0 300 850
+touchMove 0 300 950
 sleep 20
-touchMove 0 300 840
+touchMove 0 300 960
 sleep 20
-touchMove 0 300 830
+touchMove 0 300 970
 sleep 20
-touchMove 0 300 820
+touchMove 0 300 980
 sleep 20
-touchMove 0 300 810
+touchMove 0 300 990
 sleep 20
-touchMove 0 300 800
+touchMove 0 300 1000
 sleep 3500
 touchUp 0
 sleep 100
-//right and up to lane 2
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 700
-touchMove 0 320 1000
-sleep 20
-touchMove 0 340 1000
-sleep 20
-touchMove 0 360 1000
-sleep 20
-touchMove 0 380 1000
-sleep 20
-touchMove 0 400 1000
-sleep 20
-touchMove 0 420 1000
-sleep 20
-touchMove 0 440 1000
-sleep 20
-touchMove 0 460 1000
-sleep 20
-touchMove 0 480 1000
-sleep 20
-touchMove 0 500 1000
-sleep 20
-touchUp 0
-sleep 800
-//left to edge
+//left and up to lane 2 then left up to lane 3 then left to chest
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890
@@ -97,10 +53,103 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 4700
+sleep 200
+touchMove 0 320 800
+sleep 20
+touchMove 0 340 800
+sleep 20
+touchMove 0 360 800
+sleep 20
+touchMove 0 380 800
+sleep 20
+touchMove 0 400 800
+sleep 20
+touchMove 0 420 800
+sleep 20
+touchMove 0 440 800
+sleep 20
+touchMove 0 460 800
+sleep 20
+touchMove 0 480 800
+sleep 20
+touchMove 0 500 800
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 1000
+touchMove 0 320 800
+sleep 20
+touchMove 0 340 800
+sleep 20
+touchMove 0 360 800
+sleep 20
+touchMove 0 380 800
+sleep 20
+touchMove 0 400 800
+sleep 20
+touchMove 0 420 800
+sleep 20
+touchMove 0 440 800
+sleep 20
+touchMove 0 460 800
+sleep 20
+touchMove 0 480 800
+sleep 20
+touchMove 0 500 800
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2000
 touchUp 0
 sleep 100
-//right and down to lane 1 and right to chest
+//open chest 1
+touchPress 0 460 680
+sleep 2500
+touchPress 0 460 680
+sleep 1000
+//go right and down to lane 2 then left to edge
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 910
@@ -122,7 +171,7 @@ sleep 20
 touchMove 0 300 990
 sleep 20
 touchMove 0 300 1000
-sleep 700
+sleep 1200
 touchMove 0 280 1000
 sleep 20
 touchMove 0 260 1000
@@ -145,36 +194,6 @@ touchMove 0 100 1000
 sleep 20
 touchUp 0
 sleep 800
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 1400
-touchUp 0
-sleep 100
-//open chest
-touchPress 0 330 810
-sleep 3000
-touchPress 0 330 810
-sleep 1000
-//left to sparkling 2 and pick sparkling
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890
@@ -199,7 +218,7 @@ touchMove 0 300 800
 sleep 7000
 touchUp 0
 sleep 100
-//right and up to lane 2
+//go right and up to lane 3 then left to edge
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 910
@@ -221,7 +240,7 @@ sleep 20
 touchMove 0 300 990
 sleep 20
 touchMove 0 300 1000
-sleep 700
+sleep 800
 touchMove 0 320 1000
 sleep 20
 touchMove 0 340 1000
@@ -244,7 +263,717 @@ touchMove 0 500 1000
 sleep 20
 touchUp 0
 sleep 800
-//right to edge and get sparkling
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 6000
+touchUp 0
+sleep 100
+//right and down to lane 2
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1300
+touchMove 0 280 1000
+sleep 20
+touchMove 0 260 1000
+sleep 20
+touchMove 0 240 1000
+sleep 20
+touchMove 0 220 1000
+sleep 20
+touchMove 0 200 1000
+sleep 20
+touchMove 0 180 1000
+sleep 20
+touchMove 0 160 1000
+sleep 20
+touchMove 0 140 1000
+sleep 20
+touchMove 0 120 1000
+sleep 20
+touchMove 0 100 1000
+sleep 20
+touchUp 0
+sleep 800
+//left to chest 2
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 5000
+touchUp 0
+sleep 100
+//open chest 2
+touchPress 0 440 600
+sleep 2500
+touchPress 0 440 600
+sleep 1000
+//right and up to exit
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1300
+touchMove 0 320 1000
+sleep 20
+touchMove 0 340 1000
+sleep 20
+touchMove 0 360 1000
+sleep 20
+touchMove 0 380 1000
+sleep 20
+touchMove 0 400 1000
+sleep 20
+touchMove 0 420 1000
+sleep 20
+touchMove 0 440 1000
+sleep 20
+touchMove 0 460 1000
+sleep 20
+touchMove 0 480 1000
+sleep 20
+touchMove 0 500 1000
+sleep 20
+touchUp 0
+sleep 5000
+//Area 2
+//ADBattlestart
+//ADBattleEnd
+//go right to edge
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 4500
+touchUp 0
+sleep 100
+//go left and up to lane 2 then left to edge - horror coming
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 1300
+touchMove 0 320 800
+sleep 20
+touchMove 0 340 800
+sleep 20
+touchMove 0 360 800
+sleep 20
+touchMove 0 380 800
+sleep 20
+touchMove 0 400 800
+sleep 20
+touchMove 0 420 800
+sleep 20
+touchMove 0 440 800
+sleep 20
+touchMove 0 460 800
+sleep 20
+touchMove 0 480 800
+sleep 20
+touchMove 0 500 800
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2200
+touchUp 0
+sleep 500
+//HorrorDelay
+sleep 0
+//HorrorDelayE
+touchDown 0 300 1000
+sleep 20
+touchMove 0 320 1000
+sleep 20
+touchMove 0 340 1000
+sleep 20
+touchMove 0 360 1000
+sleep 20
+touchMove 0 380 1000
+sleep 20
+touchMove 0 400 1000
+sleep 20
+touchMove 0 420 1000
+sleep 20
+touchMove 0 440 1000
+sleep 20
+touchMove 0 460 1000
+sleep 20
+touchMove 0 480 1000
+sleep 20
+touchMove 0 500 1000
+sleep 20
+touchUp 0
+sleep 1000
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2800
+touchMove 0 280 800
+sleep 20
+touchMove 0 260 800
+sleep 20
+touchMove 0 240 800
+sleep 20
+touchMove 0 220 800
+sleep 20
+touchMove 0 200 800
+sleep 20
+touchMove 0 180 800
+sleep 20
+touchMove 0 160 800
+sleep 20
+touchMove 0 140 800
+sleep 20
+touchMove 0 120 800
+sleep 20
+touchMove 0 100 800
+sleep 20
+touchUp 0
+sleep 800
+//go left to edge
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 5500
+touchUp 0
+sleep 100
+//right and up then left to chest 3
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1400
+touchMove 0 320 1000
+sleep 20
+touchMove 0 340 1000
+sleep 20
+touchMove 0 360 1000
+sleep 20
+touchMove 0 380 1000
+sleep 20
+touchMove 0 400 1000
+sleep 20
+touchMove 0 420 1000
+sleep 20
+touchMove 0 440 1000
+sleep 20
+touchMove 0 460 1000
+sleep 20
+touchMove 0 480 1000
+sleep 20
+touchMove 0 500 1000
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2000
+touchUp 0
+sleep 100
+//open chest 3
+touchPress 0 440 570
+sleep 2500
+touchPress 0 440 570
+sleep 1000
+//right down and right down then left to exit
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1200
+touchMove 0 280 1000
+sleep 20
+touchMove 0 260 1000
+sleep 20
+touchMove 0 240 1000
+sleep 20
+touchMove 0 220 1000
+sleep 20
+touchMove 0 200 1000
+sleep 20
+touchMove 0 180 1000
+sleep 20
+touchMove 0 160 1000
+sleep 20
+touchMove 0 140 1000
+sleep 20
+touchMove 0 120 1000
+sleep 20
+touchMove 0 100 1000
+sleep 20
+touchUp 0
+sleep 1000
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1400
+touchMove 0 280 1000
+sleep 20
+touchMove 0 260 1000
+sleep 20
+touchMove 0 240 1000
+sleep 20
+touchMove 0 220 1000
+sleep 20
+touchMove 0 200 1000
+sleep 20
+touchMove 0 180 1000
+sleep 20
+touchMove 0 160 1000
+sleep 20
+touchMove 0 140 1000
+sleep 20
+touchMove 0 120 1000
+sleep 20
+touchMove 0 100 1000
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 4000
+touchUp 0
+sleep 100
+//right up to exit
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1400
+touchMove 0 320 1000
+sleep 20
+touchMove 0 340 1000
+sleep 20
+touchMove 0 360 1000
+sleep 20
+touchMove 0 380 1000
+sleep 20
+touchMove 0 400 1000
+sleep 20
+touchMove 0 420 1000
+sleep 20
+touchMove 0 440 1000
+sleep 20
+touchMove 0 460 1000
+sleep 20
+touchMove 0 480 1000
+sleep 20
+touchMove 0 500 1000
+sleep 20
+touchUp 0
+sleep 5000
+//Area 3
+//ADBattlestart
+//ADBattleEnd
+//left to edge
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 4000
+touchUp 0
+sleep 100
+//right down to lane 2 then right
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 1300
+touchMove 0 280 1000
+sleep 20
+touchMove 0 260 1000
+sleep 20
+touchMove 0 240 1000
+sleep 20
+touchMove 0 220 1000
+sleep 20
+touchMove 0 200 1000
+sleep 20
+touchMove 0 180 1000
+sleep 20
+touchMove 0 160 1000
+sleep 20
+touchMove 0 140 1000
+sleep 20
+touchMove 0 120 1000
+sleep 20
+touchMove 0 100 1000
+sleep 20
+touchUp 0
+sleep 800
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 800
+touchUp 0
+sleep 100
+//left down then right to chest 4
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2300
+touchMove 0 280 800
+sleep 20
+touchMove 0 260 800
+sleep 20
+touchMove 0 240 800
+sleep 20
+touchMove 0 220 800
+sleep 20
+touchMove 0 200 800
+sleep 20
+touchMove 0 180 800
+sleep 20
+touchMove 0 160 800
+sleep 20
+touchMove 0 140 800
+sleep 20
+touchMove 0 120 800
+sleep 20
+touchMove 0 100 800
+sleep 20
+touchUp 0
+sleep 800
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 910
@@ -269,7 +998,12 @@ touchMove 0 300 1000
 sleep 2500
 touchUp 0
 sleep 100
-//left and up to lane 3 and left to chest
+//open chest 4
+touchPress 0 300 690
+sleep 2500
+touchPress 0 300 690
+sleep 1000
+//left up then left up then left to exit
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890
@@ -291,7 +1025,51 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 700
+sleep 1800
+touchMove 0 320 800
+sleep 20
+touchMove 0 340 800
+sleep 20
+touchMove 0 360 800
+sleep 20
+touchMove 0 380 800
+sleep 20
+touchMove 0 400 800
+sleep 20
+touchMove 0 420 800
+sleep 20
+touchMove 0 440 800
+sleep 20
+touchMove 0 460 800
+sleep 20
+touchMove 0 480 800
+sleep 20
+touchMove 0 500 800
+sleep 20
+touchUp 0
+sleep 1000
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 890
+sleep 20
+touchMove 0 300 880
+sleep 20
+touchMove 0 300 870
+sleep 20
+touchMove 0 300 860
+sleep 20
+touchMove 0 300 850
+sleep 20
+touchMove 0 300 840
+sleep 20
+touchMove 0 300 830
+sleep 20
+touchMove 0 300 820
+sleep 20
+touchMove 0 300 810
+sleep 20
+touchMove 0 300 800
+sleep 2500
 touchMove 0 320 800
 sleep 20
 touchMove 0 340 800
@@ -335,84 +1113,10 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 1100
-touchUp 0
-sleep 100
-//open chest 2
-touchPress 0 230 475
 sleep 3000
-touchPress 0 230 475
-sleep 1000
-//right and down to lane 2
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 900
-touchMove 0 280 1000
-sleep 20
-touchMove 0 260 1000
-sleep 20
-touchMove 0 240 1000
-sleep 20
-touchMove 0 220 1000
-sleep 20
-touchMove 0 200 1000
-sleep 20
-touchMove 0 180 1000
-sleep 20
-touchMove 0 160 1000
-sleep 20
-touchMove 0 140 1000
-sleep 20
-touchMove 0 120 1000
-sleep 20
-touchMove 0 100 1000
-sleep 20
-touchUp 0
-sleep 800
-//left to and right back to exit
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 4500
 touchUp 0
 sleep 100
+//right and up exit
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 910
@@ -457,9 +1161,7 @@ touchMove 0 500 1000
 sleep 20
 touchUp 0
 sleep 5000
-//ADBattlestart
-//ADBattleEnd
-//left to sparkling and get sparkling
+//boss
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890
@@ -481,359 +1183,33 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 4500
+sleep 1300
 touchUp 0
 sleep 100
-//right and down right to chest
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 700
-touchMove 0 280 1000
-sleep 20
-touchMove 0 260 1000
-sleep 20
-touchMove 0 240 1000
-sleep 20
-touchMove 0 220 1000
-sleep 20
-touchMove 0 200 1000
-sleep 20
-touchMove 0 180 1000
-sleep 20
-touchMove 0 160 1000
-sleep 20
-touchMove 0 140 1000
-sleep 20
-touchMove 0 120 1000
-sleep 20
-touchMove 0 100 1000
-sleep 20
-touchUp 0
-sleep 800
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 1000
-touchUp 0
-sleep 100
-//open chest 1
-touchPress 0 325 760
-sleep 3000
-touchPress 0 325 760
-sleep 1000
-//left to edge
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 12000
-touchUp 0
-sleep 100
-//right and up to exit
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 700
-touchMove 0 320 1000
-sleep 20
-touchMove 0 340 1000
-sleep 20
-touchMove 0 360 1000
-sleep 20
-touchMove 0 380 1000
-sleep 20
-touchMove 0 400 1000
-sleep 20
-touchMove 0 420 1000
-sleep 20
-touchMove 0 440 1000
-sleep 20
-touchMove 0 460 1000
-sleep 20
-touchMove 0 480 1000
-sleep 20
-touchMove 0 500 1000
-sleep 20
-touchUp 0
-sleep 5000
-//ADBattlestart
-//ADBattleEnd
-//right to edge
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 6000
-touchUp 0
-sleep 100
-//left and up then right to chest 1
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 1100
-touchMove 0 320 800
-sleep 20
-touchMove 0 340 800
-sleep 20
-touchMove 0 360 800
-sleep 20
-touchMove 0 380 800
-sleep 20
-touchMove 0 400 800
-sleep 20
-touchMove 0 420 800
-sleep 20
-touchMove 0 440 800
-sleep 20
-touchMove 0 460 800
-sleep 20
-touchMove 0 480 800
-sleep 20
-touchMove 0 500 800
-sleep 20
-touchUp 0
-sleep 800
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 2200
-touchUp 0
-sleep 100
-//open chest 1
-touchPress 0 235 910
-sleep 3000
-touchPress 0 235 910
-sleep 1000
-//left to chest 2
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 12500
-touchUp 0
-sleep 100
-//open chest 2
-touchPress 0 222 350
-sleep 3000
-touchPress 0 222 350
-sleep 1000
-//right and down then right to chest 3
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
+touchPress 0 340 400
+sleep 50
+touchPress 0 340 450
+sleep 50
+touchPress 0 340 550
+sleep 50
+touchPress 0 340 600
+sleep 50
+touchPress 0 340 650
+sleep 50
+touchPress 0 340 700
+sleep 50
+touchPress 0 340 750
+sleep 50
+touchPress 0 340 800
+sleep 50
+touchPress 0 340 850
+sleep 50
+touchPress 0 340 950
+sleep 50
+touchPress 0 340 1000
 sleep 1500
-touchMove 0 280 1000
-sleep 20
-touchMove 0 260 1000
-sleep 20
-touchMove 0 240 1000
-sleep 20
-touchMove 0 220 1000
-sleep 20
-touchMove 0 200 1000
-sleep 20
-touchMove 0 180 1000
-sleep 20
-touchMove 0 160 1000
-sleep 20
-touchMove 0 140 1000
-sleep 20
-touchMove 0 120 1000
-sleep 20
-touchMove 0 100 1000
-sleep 20
-touchUp 0
-sleep 800
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 1200
-touchUp 0
-sleep 100
-//open chest 3
-touchPress 0 320 850
-sleep 3000
-touchPress 0 320 850
+touchPress 0 340 1000
 sleep 1000
-//left to sparkling 4
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890
@@ -855,245 +1231,10 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 3000
+sleep 5000
 touchUp 0
-sleep 100
-//right and up then right and up
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 700
-touchMove 0 320 1000
-sleep 20
-touchMove 0 340 1000
-sleep 20
-touchMove 0 360 1000
-sleep 20
-touchMove 0 380 1000
-sleep 20
-touchMove 0 400 1000
-sleep 20
-touchMove 0 420 1000
-sleep 20
-touchMove 0 440 1000
-sleep 20
-touchMove 0 460 1000
-sleep 20
-touchMove 0 480 1000
-sleep 20
-touchMove 0 500 1000
-sleep 20
-touchUp 0
-sleep 800
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 1200
-touchMove 0 320 1000
-sleep 20
-touchMove 0 340 1000
-sleep 20
-touchMove 0 360 1000
-sleep 20
-touchMove 0 380 1000
-sleep 20
-touchMove 0 400 1000
-sleep 20
-touchMove 0 420 1000
-sleep 20
-touchMove 0 440 1000
-sleep 20
-touchMove 0 460 1000
-sleep 20
-touchMove 0 480 1000
-sleep 20
-touchMove 0 500 1000
-sleep 20
-touchUp 0
-sleep 800
-//right to edge
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 910
-sleep 20
-touchMove 0 300 920
-sleep 20
-touchMove 0 300 930
-sleep 20
-touchMove 0 300 940
-sleep 20
-touchMove 0 300 950
-sleep 20
-touchMove 0 300 960
-sleep 20
-touchMove 0 300 970
-sleep 20
-touchMove 0 300 980
-sleep 20
-touchMove 0 300 990
-sleep 20
-touchMove 0 300 1000
-sleep 6000
-touchUp 0
-sleep 100
-//left continue to exit
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 2800
-touchMove 0 320 800
-sleep 20
-touchMove 0 340 800
-sleep 20
-touchMove 0 360 800
-sleep 20
-touchMove 0 380 800
-sleep 20
-touchMove 0 400 800
-sleep 20
-touchMove 0 420 800
-sleep 20
-touchMove 0 440 800
-sleep 20
-touchMove 0 460 800
-sleep 20
-touchMove 0 480 800
-sleep 20
-touchMove 0 500 800
-sleep 20
-touchUp 0
-sleep 6000
-//boss room
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 600
-touchUp 0
-sleep 100
-//open final chest
-touchPress 0 420 400
-sleep 50
-touchPress 0 420 450
-sleep 50
-touchPress 0 420 550
-sleep 50
-touchPress 0 420 600
-sleep 50
-touchPress 0 420 650
-sleep 50
-touchPress 0 420 700
-sleep 50
-touchPress 0 420 750
-sleep 50
-touchPress 0 420 800
-sleep 50
-touchPress 0 420 850
-sleep 50
-touchPress 0 420 950
-sleep 50
-touchPress 0 420 1000
-sleep 3000
-touchPress 0 420 1000
 sleep 1000
-//left again to boss
-touchDown 0 300 900
-sleep 20
-touchMove 0 300 890
-sleep 20
-touchMove 0 300 880
-sleep 20
-touchMove 0 300 870
-sleep 20
-touchMove 0 300 860
-sleep 20
-touchMove 0 300 850
-sleep 20
-touchMove 0 300 840
-sleep 20
-touchMove 0 300 830
-sleep 20
-touchMove 0 300 820
-sleep 20
-touchMove 0 300 810
-sleep 20
-touchMove 0 300 800
-sleep 700
-touchUp 0
-sleep 2000
-//confirm
-touchPress 0 333 790
+touchPress 0 333 788
 sleep 5000
 //ADbossBattleStart
 //ADbossBattleEnd
@@ -1219,9 +1360,10 @@ sleep 500
 touchPress 0 300 990
 sleep 500
 //choose stage
-touchPress 0 530 650
+touchPress 0 560 650
 sleep 7500
 touchPress 0 360 650
-sleep 2000
-touchPress 0 435 1000
-sleep 2000
+sleep 1900
+touchPress 0 355 927
+sleep 1700
+touchUp 0

@@ -6,7 +6,7 @@
         "new": "true",
         "playSet": {
             "accelerator": "1",
-            "interval": "0",
+            "interval": "2",
             "mode": "0",
             "playOnStart": "false",
             "playSeconds": "0#0#0",

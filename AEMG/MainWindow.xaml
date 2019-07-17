@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AEMG"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="AEMG" Height="650" Width="900" MinHeight="650" MinWidth="900">
+        Title="AEMG" Height="670" Width="900" MinHeight="670" MinWidth="900">
     <Window.Resources>
         <Style x:Key="ButtonControlTemplate1" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -36,12 +36,11 @@
                                 </Setter>
                             </Trigger>
                         </ControlTemplate.Triggers>
-                        </ControlTemplate>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-            
-                    
+          
     </Window.Resources>
     
     <Grid>
@@ -53,7 +52,8 @@
         <!--#region Left Side-->
         <StackPanel Margin="10" Grid.Column="0">
             <!-- Label to ask the user to choose a macro -->
-            <Label FontWeight="Bold" Content="Choose the Macro you want to generate" />
+            <Label FontWeight="Bold" Content="Macro List:" />
+
 
             <!-- Combobox for user to choose a macro -->
             <ComboBox ItemsSource="{Binding ComboBoxItemList}"
@@ -66,6 +66,19 @@
                         </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
+                <!-- ComboBox tooltips -->
+                <ToolTipService.ToolTip>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                            <Image Margin="0 0 5 0" Source="Images\Help-icon.png" Height="20"/>
+                            <TextBlock FontWeight="Bold" FontSize="14">Macro List:</TextBlock>
+                        </StackPanel>
+                        <Line />
+                        <TextBlock>
+                            Choose the macro you want to generate from the list
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTipService.ToolTip>
             </ComboBox>
 
             <!-- Descriptions: -->
@@ -73,11 +86,26 @@
 
             <!-- TextBox to hold macro descriptions -->
             <Border BorderThickness="5" Background="LightGray" BorderBrush="Azure">
-                <TextBlock Text="{Binding DescriptionTextBlock}" TextWrapping="Wrap" Padding="5" FontSize="13" FontStyle="Italic" LineHeight="20"/>
+                <TextBlock Text="{Binding DescriptionTextBlock}" TextWrapping="Wrap" Padding="5" FontSize="13" FontStyle="Italic" LineHeight="20">
+                    <!-- Record file location tooltips -->
+                    <ToolTipService.ToolTip>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                                <Image Margin="0 0 5 0" Source="Images\Help-icon.png" Height="20"/>
+                                <TextBlock FontWeight="Bold" FontSize="14">Descriptions:</TextBlock>
+                            </StackPanel>
+                            <Line />
+                            <TextBlock>
+                            Descriptions for the macro. Please read carefully<LineBreak />
+                            Especially Team Setup and Where to Start
+                            </TextBlock>
+                        </StackPanel>
+                    </ToolTipService.ToolTip>
+                </TextBlock>
             </Border>
 
             <!-- Record file location -->
-            <Label FontWeight="Bold" Content="_Record file Location:" />
+            <Label FontWeight="Bold" Content="Record file Location:" />
 
             <!-- TextBox and button for user to input the record file location -->
             <Grid>
@@ -86,16 +114,46 @@
                     <ColumnDefinition Width="25" />
                 </Grid.ColumnDefinitions>
 
-                <TextBox Text="{Binding RecordFileLocation}" Margin="0 0 2 0" />
+                <TextBox Text="{Binding RecordFileLocation}" Margin="0 0 2 0" >
+                    <!-- Record file location tooltips -->
+                    <ToolTipService.ToolTip>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                                <Image Margin="0 0 5 0" Source="Images\Help-icon.png" Height="20"/>
+                                <TextBlock FontWeight="Bold" FontSize="14">Record file location:</TextBlock>
+                            </StackPanel>
+                            <Line />
+                            <TextBlock>
+                            Location of the records file<LineBreak />
+                            This is set automatically<LineBreak />
+                            You can browse the file manually via the button in the right
+                            </TextBlock>
+                        </StackPanel>
+                    </ToolTipService.ToolTip>
+                </TextBox>
                 <!-- Button to open window dialog to choose file -->
                 <Button Command="{Binding RecordFileOpenDialog}" Grid.Column="1" Width="25" Content="..."/>
 
             </Grid>
 
             <!-- Macro name in Nox Recorder -->
-            <Label FontWeight="Bold" Content="Name to appear in Nox Macro Recorder"/>
-            <TextBox Text="{Binding OutputNameNox}"/>
-
+            <Label x:Name="MacroName" FontWeight="Bold" Content="Macro Name:"/>
+            <TextBox Text="{Binding OutputNameNox}">
+                <!-- Record file location tooltips -->
+                <ToolTipService.ToolTip>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
+                            <Image Margin="0 0 5 0" Source="Images\Help-icon.png" Height="20"/>
+                            <TextBlock FontWeight="Bold" FontSize="14">Macro Name:</TextBlock>
+                        </StackPanel>
+                        <Line />
+                        <TextBlock>
+                            Name of the macro that will appear in Nox Macro Recorder
+                        </TextBlock>
+                    </StackPanel>
+                </ToolTipService.ToolTip>
+            </TextBox>
+            <!-- Memu support -->
             <StackPanel Margin="0 20 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
                 <CheckBox Margin="0 0 100 0" Content="Memu 720x1280" IsChecked="{Binding Memu720IsChecked}" />
                 <CheckBox Content="Memu 1080x1920" IsChecked="{Binding Memu1080IsChecked}" />
@@ -121,15 +179,21 @@
 
                     <StackPanel Margin="5 0 5 0">
                         <Label Content="AOE Character MAX MP:" />
-                        <TextBox Text="{Binding MaxMP, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Text="{Binding MaxMP, UpdateSourceTrigger=PropertyChanged}" ToolTip="Ex: Mighty at lv80's MaxMP is 656"/>
                     </StackPanel>
 
                     <StackPanel Margin="5 0 5 0" Grid.Column="1">
                         <Label Content="AOE Character Skill MP:" />
-                        <TextBox Text="{Binding SkillMP, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Text="{Binding SkillMP, UpdateSourceTrigger=PropertyChanged}" ToolTip="Ex: Mighty's Aqua Spread is 17 MP"/>
                     </StackPanel>
 
                 </Grid>
+                <StackPanel Margin="0 5 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <CheckBox Content="Character 1  " IsChecked="{Binding ExpIsChecked01}"/>
+                    <CheckBox Content="Character 2  " IsChecked="{Binding ExpIsChecked02}"/>
+                    <CheckBox Content="Character 3  " IsChecked="{Binding ExpIsChecked03}"/>
+                    <CheckBox Content="Character 4  " IsChecked="{Binding ExpIsChecked04}"/>
+                </StackPanel>
             </StackPanel>
 
             <Border BorderThickness="1" BorderBrush="Gray" Margin="10"/>
@@ -346,8 +410,10 @@
                     <Button Content="+" Width="25" Command="{Binding AddTurnCommand}"/>
                     <Button Content="-" Width="25" Command="{Binding RemoveTurnCommand}"/>
 
-                    <CheckBox Content="AF" VerticalAlignment="Center" Margin="120 0 0 0" IsChecked="{Binding AFIsChecked}"/>
-                    <Label Content="_Delay" Margin="20 0 0 0" />
+                    <CheckBox Content="AF" VerticalAlignment="Center" Margin="120 0 0 0" IsChecked="{Binding AFIsChecked}"
+                              ToolTip="Enable this to end the fight with AF"/>
+                    <Label Content="Delay (ms)" Margin="20 0 0 0"
+                           ToolTip="Wait time for horror in miliseconds.&#x0a;Ex: 5000 for 5 seconds"/>
                     <TextBox Width="50" Margin="2" Text="{Binding DelayTextBox, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
@@ -463,9 +529,9 @@
 
             <!-- Go button -->
             <Button Style="{StaticResource ButtonControlTemplate1}"
-                Command="{Binding GenerateMacroCommand}" Height="100" Width ="100" Margin="0 10 20 0" HorizontalAlignment="Right">
-
+                    Command="{Binding GenerateMacroCommand}" Height="100" Width ="100" Margin="0 10 20 0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             </Button>
+
         </StackPanel>
         <!--#endregion
 -->

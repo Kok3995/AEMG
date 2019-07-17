@@ -1,5 +1,6 @@
-//confirm start
+//Dragon Palace Macro VH
 sleep 200
+//confirm start
 touchPress 0 72 812
 sleep 10000
 //ADBattlestart

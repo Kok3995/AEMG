@@ -23,9 +23,9 @@ namespace AEMG
         {
             ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", "/c " + agrs);
 
-            procStartInfo.RedirectStandardOutput = false;
+            procStartInfo.RedirectStandardOutput = true;
             procStartInfo.UseShellExecute = false;
-            procStartInfo.CreateNoWindow = false;
+            procStartInfo.CreateNoWindow = true;
 
             // wrap IDisposable into using (in order to release hProcess) 
             using (Process process = new Process())
@@ -127,10 +127,11 @@ namespace AEMG
         }
 
         /// <summary>
-        /// Insert battle data into macro template (main AEMG scripts)
+        /// Insert battle data and delay into macro template (main AEMG scripts)
         /// </summary>
         /// <param name="maxBattle">MAX battle from MAXMP and SKILLMP</param>
         /// <param name="templatePath">Name of the template</param>
+        /// <param name="delay">The delay when waiting for horror</param>
         internal static void InsertBattleData(string templateName, string delay = "0", int maxBattle = 1)
         {
             //If delay is not a number or that number smaller than 0 then set delay to default 0
@@ -158,10 +159,14 @@ namespace AEMG
             InsertTxt("RLRL.txt", AD);
 
             //Insert char action
-            InsertCharacterAction(1, char1, AD);
-            InsertCharacterAction(2, char2, AD);
-            InsertCharacterAction(3, char3, AD);
-            InsertCharacterAction(4, char4, AD);
+            if (char1 != 0)
+                InsertCharacterAction(1, char1, AD);
+            if (char2 != 0)
+                InsertCharacterAction(2, char2, AD);
+            if (char3 != 0)
+                InsertCharacterAction(3, char3, AD);
+            if (char4 != 0)
+                InsertCharacterAction(4, char4, AD);
 
             //Insert atk and battle won
             InsertTxt("battleWon.txt", AD);
@@ -176,21 +181,34 @@ namespace AEMG
         /// <param name="af">AF use or not</param>
         internal static void InsertCharacterDataADBoss(ObservableCollection<ObservableCollection<CharacterAction>> bossTurnList, bool af)
         {
+            //Character's last actions
+            List<int> lastCharAct = new List<int> { 0, 0, 0, 0 };
+
+            int currentChar = 0;
+
             //Create a new blank B-AD.txt file
             File.Create($"{Scripts}B-AD-Boss.txt").Close();
 
             //Open a stream to the newly created B-AD-Boss.txt
             StreamWriter ADBoss = new StreamWriter($"{Scripts}B-AD-Boss.txt");
 
-            //Insert character's action
+            //Insert character's action, do nothing if current action equal to last action
             foreach (var turn in bossTurnList)
             {
                 foreach (var character in turn)
                 {
-                    InsertCharacterAction(character.CharPos, character.CharAct, ADBoss);
+                    //if current Character action different from last action then insert, otherwise do nothing 
+                    if (character.CharAct != lastCharAct[currentChar])
+                        InsertCharacterAction(character.CharPos, character.CharAct, ADBoss);
+                    //Change last charaction to current action
+                    lastCharAct[currentChar] = character.CharAct;
+                    //change to next char
+                    currentChar++;
                 }
                 //insert atk after each turn
                 InsertTxt("atk.txt", ADBoss);
+                //reset Char count
+                currentChar = 0;
             }
 
             //Insert AF if it's checked
@@ -255,7 +273,7 @@ namespace AEMG
             File.WriteAllText(recordsPath, recordsTemplateTxt);
             File.AppendAllText(recordsPath, Environment.NewLine);
 
-            //if recordLists only has 1 child then Append "}", otherwise insert "},"
+            //if recordLists only has 1 child then Append "}", otherwise "},"
             if (recordsList.Count == 1)
                 File.AppendAllText(recordsPath, "\t}");
             else File.AppendAllText(recordsPath, "\t},");
@@ -279,8 +297,8 @@ namespace AEMG
         /// <param name="action"></param>
         internal static void InsertCharacterAction(int pos, int action, StreamWriter sw)
         {
-            if (action == 0)
-                return;
+            //if (action == 0)
+            //    return;
             //insert character pos
             sw.WriteLine(File.ReadAllText($"{Scripts}u{pos}.txt"));
 
@@ -324,6 +342,40 @@ namespace AEMG
             }
 
             return "nomatch";
+        }
+
+        /// <summary>
+        /// Insert Exp data to template
+        /// </summary>
+        /// <param name="char01">Character 1 IsChecked</param>
+        /// <param name="char02">Character 2 IsChecked</param>
+        /// <param name="char03">Character 3 IsChecked</param>
+        /// <param name="char04">Character 4 IsChecked</param>
+        internal static void InsertExpData(bool char01, bool char02, bool char03, bool char04)
+        {
+            //Create a new blank B-3u2s.txt
+            File.Create($"{Scripts}B-3u2s.txt").Close();
+            //Open a stream to it
+            StreamWriter sw = new StreamWriter($"{Scripts}B-3u2s.txt");
+            
+            //Insert left right
+            InsertTxt("LRLR.txt", sw);
+
+            //If Char is selected then insert its action, if all fours is not selected then 3rd char default
+            if (char01 == true)
+                InsertCharacterAction(1, 2, sw);
+            if (char02 == true)
+                InsertCharacterAction(2, 2, sw);
+            if (char03 == true || (char01 == false && char02 == false && char03 == false && char04 == false))
+                InsertCharacterAction(3, 2, sw);
+            if (char04 == true)
+                InsertCharacterAction(4, 2, sw);
+
+            //Insert battleWon text
+            InsertTxt("battleWon.txt", sw);
+
+            //Close the stream
+            sw.Close();
         }
 
         #endregion

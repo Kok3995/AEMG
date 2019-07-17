@@ -26,6 +26,8 @@ namespace AEMG
             AddTurnCommand = new AddTurnCommand(this);
             RemoveTurnCommand = new RemoveTurnCommand(this);
             RecordFileOpenDialog = new RecordFileOpenDialog(this);
+
+            ExpIsChecked03 = true;
         }
 
         #endregion
@@ -195,6 +197,11 @@ namespace AEMG
             get { return (_selectedMacro.Type == MacroItemType.EXP) ? true : false; }
         }
 
+        public bool ExpIsChecked01 { get; set; }
+        public bool ExpIsChecked02 { get; set; }
+        public bool ExpIsChecked03 { get; set; }
+        public bool ExpIsChecked04 { get; set; }
+
         /// <summary>
         /// Character chosen action in trash mob battle
         /// </summary>
@@ -211,7 +218,17 @@ namespace AEMG
         /// <summary>
         /// Delay text box for user to input
         /// </summary>
-        public string DelayTextBox { get; set; }
+        public string DelayTextBox
+        {
+            get
+            {
+                return SelectedMacro.Delay;
+            }
+            set
+            {
+                SelectedMacro.Delay = value;
+            }
+        }
 
         /// <summary>
         /// Turn number appears in Tab
@@ -226,7 +243,6 @@ namespace AEMG
             get
             { return _bossTurnList; }          
         }
-
 
         #endregion
 
@@ -251,12 +267,22 @@ namespace AEMG
 
             //add an turn/tabs
             _bossTurnList.Add(new ObservableCollection<CharacterAction>());
-
-            //in a newly added turn/tabs add 4 characters
-            _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 1 });
-            _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 2 });
-            _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 3 });
-            _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 4 });
+            if (_tab == 1)
+            {
+                //Tab 1 with default action
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 1 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 2 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 3 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = 0, CharPos = 4 });
+            }
+            else
+            {
+                //Tab 2 or more will take the action from the previous tab
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = _bossTurnList[_tab - 2][0].CharAct, CharPos = 1 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = _bossTurnList[_tab - 2][1].CharAct, CharPos = 2 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = _bossTurnList[_tab - 2][2].CharAct, CharPos = 3 });
+                _bossTurnList[_tab - 1].Add(new CharacterAction { CharAct = _bossTurnList[_tab - 2][3].CharAct, CharPos = 4 });
+            }
         }
 
         /// <summary>
