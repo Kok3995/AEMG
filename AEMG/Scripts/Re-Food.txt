@@ -1,0 +1,84 @@
+//Move right a little
+touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 200
+touchUp 0
+sleep 100
+//Try to find the tree
+touchPress 0 650 1000
+sleep 50
+touchPress 0 650 950
+sleep 50
+touchPress 0 650 900
+sleep 50
+touchPress 0 650 850
+sleep 50
+touchPress 0 650 800
+sleep 50
+touchPress 0 650 750
+sleep 50
+touchPress 0 650 600
+sleep 50
+touchPress 0 650 550
+sleep 50
+touchPress 0 650 500
+sleep 50
+touchPress 0 650 450
+sleep 2000
+//Confirm
+touchPress 0 250 650
+sleep 1500
+touchPress 0 314 803
+sleep 3000
+touchPress 0 250 650
+sleep 1500
+touchPress 0 250 650
+sleep 1500
+touchPress 0 250 650
+sleep 3000
+//Try to find to Gate
+touchPress 0 530 650
+sleep 50
+touchPress 0 530 600
+sleep 50
+touchPress 0 530 550
+sleep 50
+touchPress 0 530 500
+sleep 50
+touchPress 0 530 450
+sleep 50
+touchPress 0 530 400
+sleep 50
+touchPress 0 530 350
+sleep 50
+touchPress 0 530 300
+sleep 50
+touchPress 0 530 250
+sleep 50
+touchPress 0 530 200
+sleep 50
+touchPress 0 530 150
+sleep 50
+touchPress 0 530 100
+sleep 50
+touchPress 0 530 50
+sleep 50

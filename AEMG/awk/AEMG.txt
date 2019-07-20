@@ -19,6 +19,24 @@
 	close("Scripts/B-AD-Boss.txt")
 }
 
+/^\/\/FoodE$/ {
+if (food == "True") {
+	while(getline line < "Scripts/Food.txt"){print line}
+	close("Scripts/B-AD-Boss.txt") }
+}
+
+/^\/\/ReFoodE$/ {
+if (food == "True") {
+	while(getline line < "Scripts/Re-Food.txt"){print line}
+	close("Scripts/B-AD-Boss.txt") }
+}
+
+/^\/\/BuyStoneE$/ {
+if (isBuy == "True") {
+	while(getline line < "Scripts/BuyStones.txt"){print line}
+	close("Scripts/B-AD-Boss.txt") }
+}
+
 /^\/\/HorrorDelay$/ {f = 1; print; next}
 f && /sleep/ {$2 = DELAY}
 {f = 0}

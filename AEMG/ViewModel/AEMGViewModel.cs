@@ -216,6 +216,16 @@ namespace AEMG
         public bool AFIsChecked { get; set; }
 
         /// <summary>
+        /// Check if Food should be used or not
+        /// </summary>
+        public bool FoodIsChecked { get; set; }
+
+        /// <summary>
+        /// Check if Buy Stones should be used or not
+        /// </summary>
+        public bool BuyStonesIsChecked { get; set; }
+
+        /// <summary>
         /// Delay text box for user to input
         /// </summary>
         public string DelayTextBox

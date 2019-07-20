@@ -1,0 +1,10 @@
+touchPress 0 75 75
+sleep 1000
+touchPress 0 100 570
+sleep 1000
+touchPress 0 275 780
+sleep 1000
+touchPress 0 275 780
+sleep 2000
+touchPress 0 275 780
+sleep 1000

@@ -404,17 +404,21 @@
 
                 <!--#region Boss Battle-->
 
-                <!--Label and add remove tab button-->
+                <!--Label and add remove tab button, AF, Delay, Food, Buy Stones-->
                 <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
                     <Label Content="Boss Battle:" />
                     <Button Content="+" Width="25" Command="{Binding AddTurnCommand}"/>
                     <Button Content="-" Width="25" Command="{Binding RemoveTurnCommand}"/>
 
-                    <CheckBox Content="AF" VerticalAlignment="Center" Margin="120 0 0 0" IsChecked="{Binding AFIsChecked}"
+                    <CheckBox Content="AF" VerticalAlignment="Center" Margin="20 0 0 0" IsChecked="{Binding AFIsChecked}"
                               ToolTip="Enable this to end the fight with AF"/>
-                    <Label Content="Delay (ms)" Margin="20 0 0 0"
+                    <Label Content="Delay" Margin="10 0 0 0"
                            ToolTip="Wait time for horror in miliseconds.&#x0a;Ex: 5000 for 5 seconds"/>
                     <TextBox Width="50" Margin="2" Text="{Binding DelayTextBox, UpdateSourceTrigger=PropertyChanged}" />
+                    <CheckBox Content="Food" VerticalAlignment="Center" Margin="10 0 0 0" IsChecked="{Binding FoodIsChecked}"
+                              ToolTip="Enable this eat food when entered boss room"/>
+                    <CheckBox Content="Buy Stones" VerticalAlignment="Center" Margin="10 0 0 0" IsChecked="{Binding BuyStonesIsChecked}"
+                              ToolTip="Enable this to buy stones when ran out of key"/>
                 </StackPanel>
 
                 <!-- Tab Control that hold all turns -->

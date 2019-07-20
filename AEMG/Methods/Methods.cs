@@ -23,7 +23,7 @@ namespace AEMG
         {
             ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", "/c " + agrs);
 
-            procStartInfo.RedirectStandardOutput = true;
+            procStartInfo.RedirectStandardOutput = false;
             procStartInfo.UseShellExecute = false;
             procStartInfo.CreateNoWindow = true;
 
@@ -132,12 +132,14 @@ namespace AEMG
         /// <param name="maxBattle">MAX battle from MAXMP and SKILLMP</param>
         /// <param name="templatePath">Name of the template</param>
         /// <param name="delay">The delay when waiting for horror</param>
-        internal static void InsertBattleData(string templateName, string delay = "0", int maxBattle = 1)
+        internal static void InsertBattleData(string templateName, string delay = "0", int maxBattle = 1, bool food = false, bool isBuy = false)
         {
+
             //If delay is not a number or that number smaller than 0 then set delay to default 0
             if (!int.TryParse(delay, out int tmp) || tmp < 0)
                 delay = "0";
-            Methods.StartCMDProcess($"{awk} -v MAX={maxBattle} -v DELAY={delay} -f {AEMG} Scripts\\{templateName} > tmp0.txt");
+
+            Methods.StartCMDProcess($"{awk} -v MAX={maxBattle} -v DELAY={delay} -v food={food} -v isBuy={isBuy} -f {AEMG} Scripts\\{templateName} > tmp0.txt");
         }
 
         /// <summary>
@@ -214,7 +216,7 @@ namespace AEMG
             //Insert AF if it's checked
             if (af == true)
                 InsertTxt("AF.txt", ADBoss);
-
+           
             ADBoss.Close();
         }
 

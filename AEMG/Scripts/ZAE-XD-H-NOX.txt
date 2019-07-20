@@ -1140,6 +1140,8 @@ touchUp 0
 sleep 6000
 //boss room
 //boss
+//Food
+//FoodE
 touchDown 0 247 993
 sleep 48
 touchMove 0 247 975
@@ -1534,9 +1536,13 @@ sleep 500
 touchPress 0 300 990
 sleep 500
 //choose stage
+//ReFood
+//ReFoodE
 touchPress 0 560 650
 sleep 7500
 touchPress 0 432 682
 sleep 2000
+//BuyStone
+//BuyStoneE
 touchPress 0 473 927
 sleep 2000

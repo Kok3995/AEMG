@@ -87,7 +87,7 @@ namespace AEMG
                     Methods.InsertCharacterDataADBoss(_viewModel.BossTurnList, _viewModel.AFIsChecked);
 
                     //insert trashmob battle and boss battle data and delay to the template
-                    Methods.InsertBattleData(_viewModel.SelectedMacro.TemplateName, _viewModel.DelayTextBox);
+                    Methods.InsertBattleData(_viewModel.SelectedMacro.TemplateName, _viewModel.DelayTextBox, 1, _viewModel.FoodIsChecked, _viewModel.BuyStonesIsChecked);
                     break;
             }
 
