@@ -293,8 +293,6 @@ touchMove 0 500 800
 sleep 20
 touchUp 0
 sleep 5000
-//ADBattlestart
-//ADBattleEnd
 //Area 2
 //left till wall
 touchDown 0 300 900
@@ -318,10 +316,10 @@ sleep 20
 touchMove 0 300 810
 sleep 20
 touchMove 0 300 800
-sleep 5000
+sleep 2000
 touchUp 0
 sleep 100
-//right up left till wall
+//right up then battle
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 910
@@ -365,7 +363,10 @@ sleep 20
 touchMove 0 500 1000
 sleep 20
 touchUp 0
-sleep 800
+sleep 1000
+//ADBattlestart
+//ADBattleEnd
+//left till wall
 touchDown 0 300 900
 sleep 20
 touchMove 0 300 890

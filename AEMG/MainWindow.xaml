@@ -13,8 +13,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Name="border" 
-                        BorderThickness="0">
+                        <Border Name="border" BorderThickness="0">
                             <Border.Background>
                                 <ImageBrush ImageSource="Images\atk-normal.png"/>
                             </Border.Background>
@@ -203,8 +202,13 @@
 
                 <!--#region Trash Mob Battle-->
                 <Label FontWeight="Bold" Content="Another Dungeon Macro" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Trash Mob Battle:" />
+                    <CheckBox Margin="10 0 0 0" VerticalAlignment="Center" IsChecked="{Binding Turn2IsChecked}" 
+                              Content="Turn 2" ToolTip="Your party will wait for 2nd turn to hit atk button again&#x0a;making sure the mob are dead"/>
+                </StackPanel>
 
-                <Label Content="Trash Mob Battle:" />
+                
                 <Grid Width="400">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -417,8 +421,8 @@
                     <TextBox Width="50" Margin="2" Text="{Binding DelayTextBox, UpdateSourceTrigger=PropertyChanged}" />
                     <CheckBox Content="Food" VerticalAlignment="Center" Margin="10 0 0 0" IsChecked="{Binding FoodIsChecked}"
                               ToolTip="Enable this eat food when entered boss room"/>
-                    <CheckBox Content="Buy Stones" VerticalAlignment="Center" Margin="10 0 0 0" IsChecked="{Binding BuyStonesIsChecked}"
-                              ToolTip="Enable this to buy stones when ran out of key"/>
+                    <CheckBox Content="Buy Keys" VerticalAlignment="Center" Margin="10 0 0 0" IsChecked="{Binding BuyStonesIsChecked}"
+                              ToolTip="Enable this to buy keys when ran out of key"/>
                 </StackPanel>
 
                 <!-- Tab Control that hold all turns -->

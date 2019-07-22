@@ -16,6 +16,9 @@ namespace AEMG
         /// </summary>
         public AEMGViewModel()
         {
+            //Restore user' settings
+            Upgrade();
+
             //create a new list of turns/tabs
             _bossTurnList = new ObservableCollection<ObservableCollection<CharacterAction>>();
             //add a starting tab/turns
@@ -211,6 +214,11 @@ namespace AEMG
         public int Char04Ac { get; set; }
 
         /// <summary>
+        /// Turn 2 CheckBox state
+        /// </summary>
+        public bool Turn2IsChecked { get; set; }
+
+        /// <summary>
         /// Check if AF should be used or not
         /// </summary>
         public bool AFIsChecked { get; set; }
@@ -305,6 +313,19 @@ namespace AEMG
 
             //Decrease tab number
             _tab--;
+        }
+
+        /// <summary>
+        /// Retain settings when app updated
+        /// </summary>
+        internal void Upgrade()
+        {
+            if (Settings.Default.UpgradeNeeded)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.UpgradeNeeded = false;
+                Settings.Default.Save();
+            }
         }
 
         #endregion

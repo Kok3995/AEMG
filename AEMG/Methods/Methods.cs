@@ -149,7 +149,7 @@ namespace AEMG
         /// <param name="char2">character 2 action</param>
         /// <param name="char3">character 3 action</param>
         /// <param name="char4">character 4 action</param>
-        internal static void InsertCharacterDataAD(int char1, int char2, int char3, int char4)
+        internal static void InsertCharacterDataAD(int char1, int char2, int char3, int char4, bool turn2 = false)
         {
             //Create a new blank B-AD.txt file
             File.Create($"{Scripts}B-AD.txt").Close();
@@ -169,6 +169,10 @@ namespace AEMG
                 InsertCharacterAction(3, char3, AD);
             if (char4 != 0)
                 InsertCharacterAction(4, char4, AD);
+
+            //Insert turn 2
+            if (turn2 == true)
+                InsertTxt("atk.txt", AD);
 
             //Insert atk and battle won
             InsertTxt("battleWon.txt", AD);
