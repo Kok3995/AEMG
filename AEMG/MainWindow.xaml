@@ -206,6 +206,9 @@
                     <Label Content="Trash Mob Battle:" />
                     <CheckBox Margin="10 0 0 0" VerticalAlignment="Center" IsChecked="{Binding Turn2IsChecked}" 
                               Content="Turn 2" ToolTip="Your party will wait for 2nd turn to hit atk button again&#x0a;making sure the mob are dead"/>
+                    <Label Margin="10 0 0 0" Content="LeftRight" />
+                    <TextBox Width="50" Margin="2" Text="{Binding LeftRightTextBox}" 
+                             ToolTip="Default is 4. The characters will run left-right-left-right&#x0a;Ex: left-right-left-right-left if set to 5 etc..." />
                 </StackPanel>
 
                 

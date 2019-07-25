@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using AEMG.Properties;
+using Microsoft.Win32;
 
 namespace AEMG
 {
@@ -26,9 +27,11 @@ namespace AEMG
 
             //Generate command
             GenerateMacroCommand = new GenerateMacroCommand(this);
-            AddTurnCommand = new AddTurnCommand(this);
-            RemoveTurnCommand = new RemoveTurnCommand(this);
-            RecordFileOpenDialog = new RecordFileOpenDialog(this);
+            AddTurnCommand = new RelayCommand(p => AddTab());
+            RemoveTurnCommand = new RelayCommand(
+                p => RemoveTab(),
+                p => BossTurnList.Count > 1);
+            RecordFileOpenDialog = new RelayCommand(p => OpenRecordFileDialog());
 
             ExpIsChecked03 = true;
         }
@@ -218,6 +221,8 @@ namespace AEMG
         /// </summary>
         public bool Turn2IsChecked { get; set; }
 
+        public string LeftRightTextBox { get; set; }
+
         /// <summary>
         /// Check if AF should be used or not
         /// </summary>
@@ -326,6 +331,19 @@ namespace AEMG
                 Settings.Default.UpgradeNeeded = false;
                 Settings.Default.Save();
             }
+        }
+
+        /// <summary>
+        /// Open record file location dialog
+        /// </summary>
+        internal void OpenRecordFileDialog()
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+
+            openDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+            if (openDialog.ShowDialog() == true)
+                RecordFileLocation = openDialog.FileName;
         }
 
         #endregion

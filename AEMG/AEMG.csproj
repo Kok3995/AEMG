@@ -81,12 +81,10 @@
     </ApplicationDefinition>
     <Compile Include="Converter\TypeToImageConverter.cs" />
     <Compile Include="Data\MacroItemType.cs" />
-    <Compile Include="ViewModel\Commands\AddTurnCommand.cs" />
+    <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\AEMGViewModel.cs" />
     <Compile Include="ViewModel\Commands\GenerateMacroCommand.cs" />
-    <Compile Include="ViewModel\Commands\RemoveTurnCommand.cs" />
-    <Compile Include="ViewModel\Commands\RecordFileOpenDialog.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -167,6 +165,9 @@
     <Content Include="Scripts\Food.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\Left.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\LRLR.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -174,6 +175,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\record-template.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Right.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\ZAE-BKC-NOX-Des.txt">

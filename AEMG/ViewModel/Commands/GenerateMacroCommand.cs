@@ -81,7 +81,7 @@ namespace AEMG
                 case MacroItemType.AD:
                 case MacroItemType.ADVH:
                     //insert character's action in trash mob battle
-                    Methods.InsertCharacterDataAD(_viewModel.Char01Ac, _viewModel.Char02Ac, _viewModel.Char03Ac, _viewModel.Char04Ac, _viewModel.Turn2IsChecked);
+                    Methods.InsertCharacterDataAD(_viewModel.Char01Ac, _viewModel.Char02Ac, _viewModel.Char03Ac, _viewModel.Char04Ac, _viewModel.Turn2IsChecked, _viewModel.LeftRightTextBox);
                     
                     //insert character's action in boss battle
                     Methods.InsertCharacterDataADBoss(_viewModel.BossTurnList, _viewModel.AFIsChecked);

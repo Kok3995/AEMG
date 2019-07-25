@@ -1,0 +1,24 @@
+﻿touchDown 0 300 900
+sleep 20
+touchMove 0 300 910
+sleep 20
+touchMove 0 300 920
+sleep 20
+touchMove 0 300 930
+sleep 20
+touchMove 0 300 940
+sleep 20
+touchMove 0 300 950
+sleep 20
+touchMove 0 300 960
+sleep 20
+touchMove 0 300 970
+sleep 20
+touchMove 0 300 980
+sleep 20
+touchMove 0 300 990
+sleep 20
+touchMove 0 300 1000
+sleep 2000
+touchUp 0
+sleep 200

@@ -149,7 +149,7 @@ namespace AEMG
         /// <param name="char2">character 2 action</param>
         /// <param name="char3">character 3 action</param>
         /// <param name="char4">character 4 action</param>
-        internal static void InsertCharacterDataAD(int char1, int char2, int char3, int char4, bool turn2 = false)
+        internal static void InsertCharacterDataAD(int char1, int char2, int char3, int char4, bool turn2 = false, string rl = "4")
         {
             //Create a new blank B-AD.txt file
             File.Create($"{Scripts}B-AD.txt").Close();
@@ -157,9 +157,24 @@ namespace AEMG
             //Open a stream to the newly created B-AD.txt
             StreamWriter AD = new StreamWriter($"{Scripts}B-AD.txt");
 
-            //Insert RLRL to it
-            InsertTxt("RLRL.txt", AD);
-
+            //Insert RLRL to it if LeftRight textBox no input
+            if (!(int.TryParse(rl, out int rlint)) || rlint <= 4)
+                InsertTxt("RLRL.txt", AD);
+            else
+            {
+                bool left = true;
+                for (int i = 1; i <= rlint - 4; i++)
+                {
+                    //alternaing between left and right
+                    if (left == true)
+                    { InsertTxt("Left.txt", AD); left = false; }
+                    else { InsertTxt("Right.txt", AD); left = true; }
+                }
+                if (rlint % 2 == 1)
+                    InsertTxt("LRLR.txt", AD);
+                else InsertTxt("RLRL.txt", AD);
+            }
+    
             //Insert char action
             if (char1 != 0)
                 InsertCharacterAction(1, char1, AD);
